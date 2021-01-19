@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -8,9 +9,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
-
+    <link rel="stylesheet" href="{% static 'image/favicon/rv.ico' %}"> {
     <title>InvBod</title>
+
+    {% load pwa %} {% progressive_web_app_meta %}
 
 </head>
 
@@ -18,7 +20,7 @@
 <body>
     <!-- header-->
     <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="image/estrategias.png" width="150px" height="70px"></a>
+        <a class="navbar-brand" href="#"><img src="{% static 'image/estrategias.png' %}" width="150px" height="70px"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +37,6 @@
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="producto.html">Productos</a>
-
                         </div>
                     </li>
 
@@ -50,22 +51,8 @@
             </form>
         </div>
     </nav>
-    <!-- //header-->
 
-    <br>
-
-    <div class="alert alert-success text-center" role="alert">
-
-        <h4 class="alert-heading text-center">Somos InvBod!</h4>
-        <p>Somos una empresa de almacenaje, para todo tipo de pymes a un precio accesible.</p>
-        <hr>
-        <p class="mb-0">Tu podras guradar todo tipo de productos, y sabras los movimientos que estos realizarn en el Warehouse.</p>
-    </div>
-
-
-
-
-
+    {% block content %} {% endblock %}
 
     <!--footer-->
 

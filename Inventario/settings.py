@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'app',
     #'social_django',
     'pwa',
-    #'rest_framework', 
+    #'rest_framework',
+    
 ]
 
 
